@@ -1,0 +1,61 @@
+# Final Project: Newton's Cradle
+
+Kevin Holligan
+CSCI 5229 Fall 2016
+
+3D scene of Newton's cradle. The scene is drawn using regular cylinders for the horizontal and vertical cross beams. 
+Texturing was added to the original cylinder code. 
+Used an open sourced torus function (credit given in the comments) to draw the rings around the horizontal bars that connect to the wires.
+
+The sections that were my own contribution are the reflections on the spheres and the corner joints on the frame. 
+The reflections on the spheres were done by creating a cube map and applying the cube mapped texture to the sphere. 
+I used an open source image loader for TGA images as it was one of the easier ones to apply (tried using CImg, DevIL, and stb_image). 
+This was a tricky element because when I first applied the cubemap textures, everytime I rotated the scene I was always looking at the same segment of the cubemap. 
+I applied a rotate to the texture matrix loaded via glMatrixMode in order to rotate it with the camera. 
+I used GL_REFLECTION_MAP to create the shiny, reflective surface I was aiming for. I did not use mipmap filtering for the cubemap because I liked the way the image stays sharper from distance. 
+This can be viewed from scene 3.
+
+The corner joints took me a long time to create because I went through many trials and attempts at drawing them. 
+At first I attempted to draw them using simple objects rotated around a quarter circle, but this was a mistake (doesn't look good, complicated, etc). 
+Ultimately, I drew them using a bezier curve and manually calculating the control points. I used a 16 control point bezier patch. 
+It took me some time to figure out how to draw the circular shape, but soon realized it was impossible with only 4 control points to define the base. 
+What I ended up realizing was that you can use the bezier curve to approximate a semi-circle and then draw a reciprocal image in the other direction. 
+You may see some gaps where the cylinder meets the joint as the semi-circle is not a perfect approximation. 
+The first time I drew the object, the normals were inverted (they were facing the 'inside' and not the outside). 
+This was because I was incorrectly specifying the order of the points (clockwise as opposed to counterclockwise order). 
+I used mipmap texture filtering for the frame of the the object to help smooth out the texturing. 
+This can be viewed from scene 2.
+
+I think I fixed the textures on the corner joints as you specified, and applied the cubemapping to all the objects, but as you mentioned in the feedback I prefer the contrast between the frame and the shiny balls. 
+The problem I saw with the textures is that it looked like they were rotating when I rotated the view. 
+I think this was due to the rotation that I applied for the cubemap, and thus applied a reverse rotation before drawing the joints. 
+Unfortunately, I wasn't able to get to the stretch goals because I ran out of time working on other final projects/papers. 
+
+Use 1, 2, and 3 to view different scenes which allow you to easily view the lighting effects and textures on the drawn objects.
+
+To build and run:
+```
+$make clean ; make
+$./final
+```
+
+Key bindings
+  0   Reset scene to 0
+  1   View scene 1
+  2   View scene 2
+  3   View scene 3
+  r   Toggle cubemapping applied to all objects
+  l   Toggle lighting
+  m   Toggle movement of light
+  <>  Move the light
+  []  Lower/raise light
+  ;'  Change distance of the light
+  wd  Move forward/backwards in first person
+  as  Move left/right in first person
+  qz  Look up/down
+  +/- Change field of view
+  PgDn/PgUp Increase/Decrease dim
+  arrows Change view angle
+  ESC    Exit
+
+

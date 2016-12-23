@@ -1,0 +1,33 @@
+# Homework 4: Projections
+
+Kevin Holligan
+CSCI 5229 Fall 2016
+
+3D scene of Newton's cradle, using a custom sphere function for the balls, a cylinder function for the "string" attachment and rectangles for the bars. Will eventually create a more complex shape and expand on the bars to have rounded edges.
+
+To build and run:
+```
+make
+./hw4
+```
+
+Key bindings
+  0   Reset scene to 0
+  1   Change the mode to perspective
+  2   Change the mode to orthogonal
+  w   Move forward in first person in perspective
+  s   Move backwards in first person in perspective
+  d   Strafe right in perspective
+  a   Strafe left in perspective
+  q   Look down in perspective
+  z   Look up in perspective
+  e   Look right in perspective
+  c   Look left in perspective
+  m   Increase the fov
+  n   decrease the fov
+  o   Decrease the dim
+  p   Increase the dims
+  arrows Change view angle
+  ESC    Exit
+
+Time to complete: 10 hours. Spent time redrawing the 3D objects to draw newton's cradle. Spent about 6 hours reading tutorials and learning how to strafe in perspective.

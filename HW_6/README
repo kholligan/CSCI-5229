@@ -1,0 +1,39 @@
+# Homework 6: Textures and Lighting
+
+Kevin Holligan
+CSCI 5229 Fall 2016
+
+3D scene of Newton's cradle, with custom function to draw cylinders as the "strings"/"wires" and rectangular bars with rounded edges. Lighting effects added and ambient/diffuse/specular effects added to the sphere.
+
+Wood texture added to the bar along the sides and front and back faces.
+'seamless metal' texture added to the wiring that supports the balls.
+Silver metal texture added to the spheres.
+
+Use 1, 2, and 3 to view different "scenes" which allow you to easily view the lighting effects and textures on the drawn objects.
+
+To build and run:
+```
+make
+./hw6
+```
+
+Key bindings
+  0   Reset scene to 0
+  1   View scene 1
+  2   View scene 2
+  3   View whole scene
+  l   Toggle lighting
+  m   Toggle movement of light
+  <>  Move the light
+  []  Lower/raise light
+  ;'  Change distance of the light
+  p   Toggle ortho/perspective mode
+  wd  Move forward/backwards in first person
+  as  Move left/right in first person
+  +/- Change field of view
+  PgDn/PgUp Increase/Decrease dim
+  arrows Change view angle
+  ESC    Exit
+
+Time to complete: 11 hours. Images converted from JPG to BMP using the Mac photo preview export will write the BMP in top down format instead of bottom up format. This causes the first pixel to be read in the top left corner instead of the bottom left corner resulting an error in your BMP loader function (because height is a negative value). This took me a while to debug and find another image converter that reverses the read order.
+Also spent time figuring out how to properly align the wood textures on the bars so that the rounded corner faces lined up with the cube. I would need a different texture to get the front and back of the bar to line up with the sides. With one texture, the grains don't really align, but I couldn't find a texture pair that had both the horizontal wood grain AND a matching center cut/cross face.

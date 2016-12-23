@@ -1,0 +1,28 @@
+# Homework 2: Lorenz Attractor
+
+Kevin Holligan
+CSCI 5229 Fall 2016
+
+Make a line trace of the Lorenz attractor points.
+
+To build and run:
+```
+make
+./hw2
+```
+
+Key bindings
+  0		Reset scene to original values
+  c 	Change color of the line trace
+  s 	Increase the s value
+  S     Decrease the s value
+  b 	Increase the b value
+  B 	Decrease the b value
+  r 	Increase the r value
+  R 	Decrease the r value
+  p 	Increase the p value
+  P 	Decrease the p value
+  arrows Change view angle
+  ESC    Exit
+
+Time to complete: 5 hours. Troubles were expanding the ortho perspective so that you could see the whole lorenz attractor, not having the random color change on every key press (i.e. moving it out of the display func), remembering how to write C code (it's been a while).

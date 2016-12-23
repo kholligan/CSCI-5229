@@ -1,0 +1,31 @@
+# Homework 4: Projections
+
+Kevin Holligan
+CSCI 5229 Fall 2016
+
+3D scene of Newton's cradle, with custom function to draw cylinders as the "strings"/"wires" and rectangular bars with rounded edges. Lighting effects added and ambient/diffuse/specular effects added to the sphere.
+
+Use 1, 2, and 3 to view different "scenes" which allow you to easily view the lighting effects on the drawn objects.
+
+To build and run:
+```
+make
+./hw5
+```
+
+Key bindings
+  0   Reset scene to 0
+  1   View scene 1
+  2   View scene 2
+  3   View whole scene
+  l   Toggle lighting
+  m   Toggle movement of light
+  <>  Move the light
+  []  Lower/raise light
+  p   Toggle ortho/perspective mode
+  +/- Change field of view
+  PgDn/PgUp Increase/Decrease dim
+  arrows Change view angle
+  ESC    Exit
+
+Time to complete: 14 hours. Spent time drawing the cylinders and the rounded edges (about 8 hours). Spent time trying to figure out what the cylinder normals were and then why they were not smoothing the light around the actual cylinder when I first tried to use (cos(theta), sin(theta), 0). 

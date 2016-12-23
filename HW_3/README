@@ -1,0 +1,23 @@
+# Homework 3: 3D Objects
+
+Kevin Holligan
+CSCI 5229 Fall 2016
+
+3D Scene of 4 chairs and a table. 1 chair is knocked over and the other is rotated to show another rotational element.
+
+Chairs are built from separate pieces (legs, seat, seat back) and then combined in the chair() call. Thus, the pieces are assembled and can be rotated, scaled, and translated as a unit after they are drawn.
+
+To build and run:
+```
+make
+./hw3
+```
+
+Key bindings
+  0		Reset scene to original values
+  a   Decrease the dim
+  d   Increase the dim
+  arrows Change view angle
+  ESC    Exit
+
+Time to complete: 11 hours. Spent 6 or 7 hours trying to draw Newton's Cradle, but really struggled trying to draw 3D objects at certain points on the sphere. Also was having difficulty drawing rounded edges for the frame of the mechanism. Spent about 3-4 hours drawing the chairs and tables. Mostly required a better handle on GL_QUADS and the mechanism for ordering the points, rotating, translating and combining the elements into a single object.
